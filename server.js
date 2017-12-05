@@ -74,6 +74,13 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/projects', (req, res) => {
+    //res.send('<h1>About!</h1>');
+    res.render('projects.hbs', {
+        pageTitle: 'Projects'
+    });
+});
+
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage: 'Błąd serwera!'

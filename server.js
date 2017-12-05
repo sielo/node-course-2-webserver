@@ -2,6 +2,11 @@ const express = require('express');   // http://expressjs.com/en/4x/api.html
 const hbs = require('hbs'); // handlebars
 const fs = require('fs');
 
+// na potrzeby HEROKU odczytujemy port ze zmiennych środowiskowych
+// jeśli go nie ma to utawiamy 3000.
+const port = process.env.PORT || 3000;
+//
+
 // UWAGA 1
 // Folder "views" to domyślny folder z którego czyta Express przy funkcji "render"
 
@@ -75,6 +80,6 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Serwer uruchomiony na porcie: 3000');
+app.listen(port, () => {
+    console.log(`Serwer uruchomiony na porcie: ${port}`);
 });
